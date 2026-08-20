@@ -1,0 +1,24 @@
+# Task file
+task.txt
+
+# Environment
+.env
+.env.local
+
+# Dependencies
+vendor/
+
+# Uploads
+public/uploads/avatars/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
