@@ -21,7 +21,7 @@ $currentUserId = (int) $_SESSION['user_id'];
     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf, ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="chat_id" value="<?= (int)$chat['id'] ?>">
     <textarea name="body" id="msg-input" class="form-control rounded-pill"
-              placeholder="Type your message here" rows="1" style="resize:none;max-height:120px"></textarea>
+              placeholder="Введите сообщение" rows="1" style="resize:none;max-height:120px"></textarea>
     <button type="submit" class="btn btn-dark rounded-circle flex-shrink-0"
             style="width:38px;height:38px;padding:0">&#9658;</button>
 </form>

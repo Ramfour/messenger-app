@@ -129,8 +129,8 @@ if (msgBox) {
         ctxMenu.style.top  = e.clientY + 'px';
         ctxMenu.style.left = e.clientX + 'px';
         ctxMenu.innerHTML  = `
-            <li onclick="editMessage(${id})">Edit</li>
-            <li onclick="deleteMessage(${id})">Delete</li>`;
+            <li onclick="editMessage(${id})">Редактировать</li>
+            <li onclick="deleteMessage(${id})">Удалить</li>`;
         document.body.appendChild(ctxMenu);
     });
 
@@ -139,7 +139,7 @@ if (msgBox) {
         removeCtx();
         const bodyEl = document.getElementById('msg-body-' + id);
         if (!bodyEl) return;
-        const newBody = prompt('Edit message:', bodyEl.textContent);
+        const newBody = prompt('Редактировать сообщение:', bodyEl.textContent);
         if (newBody === null || !newBody.trim()) return;
         post('/messages/edit', { id, body: newBody.trim() })
             .then(d => { if (d.ok) bodyEl.textContent = newBody.trim(); });
@@ -147,7 +147,7 @@ if (msgBox) {
 
     window.deleteMessage = function (id) {
         removeCtx();
-        if (!confirm('Delete this message?')) return;
+        if (!confirm('Удалить это сообщение?')) return;
         post('/messages/delete', { id }).then(d => {
             if (d.ok) {
                 const el = document.querySelector(`.message[data-id="${id}"]`);
@@ -211,7 +211,7 @@ if (searchInput) {
                 .then(users => {
                     searchResults.innerHTML = '';
                     if (!users.length) {
-                        searchResults.innerHTML = '<li class="text-muted">No users found</li>';
+                        searchResults.innerHTML = '<li class="text-muted">Пользователи не найдены</li>';
                     } else {
                         users.forEach(u => {
                             const li = document.createElement('li');
